@@ -19,11 +19,11 @@ const Login = () => {
       // User is authenticated
       // Redirect to the protected page or load its content dynamically
       console.log("User authenticated");
-      localStorage.setItem('isAuthorized', true);
+      // localStorage.setItem('isAuthorized', true);
       // Redirect the user to the protected page
       navigate("/protected");
     } else {
-      localStorage.clear();
+      // localStorage.clear();
       alert("Invalid username or password");
     }
   };

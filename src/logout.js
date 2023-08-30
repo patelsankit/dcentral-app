@@ -7,7 +7,7 @@ const Logout = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    localStorage.clear();
+    // localStorage.clear();
     // Perform logout logic here
     // For example, clear any user authentication tokens or session information
 
