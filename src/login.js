@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import imageone from "./assets/images/bg.svg";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -29,12 +30,16 @@ const Login = () => {
   };
 
   return (
-     <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 shadow-md rounded-md w-96">
+    <div className="min-h-screen flex p-5 sm:p-10">
+     <div className="hidden lg:block">
+            <img className="w-full h-full" src={imageone} alt={"logo"}/> 
+    </div>
+     <div className="flex items-center justify-center w-full">
+      <div className="bg-white p-8 shadow-md rounded-md w-96 ">
         <h2 className="text-2xl font-semibold mb-4">Login</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label className="block text-gray-600">Username</label>
+            <label className="block">Username</label>
             <input
               type="text"
               className="w-full border rounded px-3 py-2 focus:outline-none focus:border-blue-400"
@@ -55,12 +60,14 @@ const Login = () => {
           </div>
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600"
+            className="btnlogin border-0 hover:border-0 w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600"
           >
             Login
           </button>
         </form>
       </div>
+    </div>
+   
     </div>
     // <form onSubmit={handleSubmit}>
     //   <input className="hidden text-center"

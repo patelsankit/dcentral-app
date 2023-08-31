@@ -1,0 +1,215 @@
+.santry{
+        @apply text-red-800 text-6xl
+}
+
+.btnss {
+  position: relative;
+  padding: 12px 35px;
+  background: #FEC195;
+  font-size: 17px;
+  font-weight: 500;
+  color: #181818;
+  border: 3px solid #FEC195;
+  border-radius: 8px;
+  box-shadow: 0 0 0 #fec1958c;
+  transition: all .3s ease-in-out;
+}
+
+.star-1 {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 25px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 1s cubic-bezier(0.05, 0.83, 0.43, 0.96);
+}
+
+.star-2 {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-3 {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-4 {
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  width: 8px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all .8s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-5 {
+  position: absolute;
+  top: 25%;
+  left: 45%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all .6s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-6 {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all .8s ease;
+}
+
+.btnss:hover {
+  background: transparent;
+  color: #FEC195;
+  box-shadow: 0 0 25px #fec1958c;
+}
+
+.btnss:hover .star-1 {
+  position: absolute;
+  top: -80%;
+  left: -30%;
+  width: 25px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+.btnss:hover .star-2 {
+  position: absolute;
+  top: -25%;
+  left: 10%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+.btnss:hover .star-3 {
+  position: absolute;
+  top: 55%;
+  left: 25%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+.btnss:hover .star-4 {
+  position: absolute;
+  top: 30%;
+  left: 80%;
+  width: 8px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+.btnss:hover .star-5 {
+  position: absolute;
+  top: 25%;
+  left: 115%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+.btnss:hover .star-6 {
+  position: absolute;
+  top: 5%;
+  left: 60%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+.fil0 {
+  fill: #FFFDEF
+}
+
+
+/* login */
+
+.btnlogin {
+ display: inline-block;
+ padding: 12px 24px;
+ border: 1px solid #4f4f4f;
+ border-radius: 4px;
+ transition: all 0.2s ease-in;
+ position: relative;
+ overflow: hidden;
+ font-size: 19px;
+ color: black;
+ z-index: 1;
+}
+
+.btnlogin:before {
+ content: "";
+ position: absolute;
+ left: 50%;
+ transform: translateX(-50%) scaleY(1) scaleX(1.25);
+ top: 100%;
+ width: 140%;
+ height: 180%;
+ background-color: rgba(0, 0, 0, 0.05);
+ border-radius: 50%;
+ display: block;
+ transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+ z-index: -1;
+}
+
+.btnlogin:after {
+ content: "";
+ position: absolute;
+ left: 55%;
+ transform: translateX(-50%) scaleY(1) scaleX(1.45);
+ top: 180%;
+ width: 160%;
+ height: 190%;
+ background-color: #160f4f;
+ border-radius: 50%;
+ display: block;
+ transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+ z-index: -1;
+}
+
+.btnlogin:hover {
+ color: #ffffff;
+ border: 1px solid #160f4f;
+}
+
+.btnlogin:hover:before {
+ top: -35%;
+ background-color: #160f4f;
+ transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+.btnlogin:hover:after {
+ top: -45%;
+ background-color: #160f4f;
+ transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
