@@ -1,0 +1,14 @@
+.coolinput {
+  @apply flex flex-col static w-full;
+}
+.coolinput label.text {
+  @apply text-xs text-[#717390] font-normal text-[10px] relative w-fit ml-[16px] mr-0 my-0 px-[4px] py-0 top-2 bg-[white];
+  
+}
+.coolinput input[type="text"].input {
+  @apply text-xs px-2.5 py-[11px] rounded-[5px] border-2 border-[solid] bg-transparent;
+  
+}
+.coolinput input[type="text"].input:focus {
+  outline: none;
+}

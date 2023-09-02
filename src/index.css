@@ -1,4 +1,6 @@
 @import "./assets/css/custom.css";
+@import "./assets/css/input-custom.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
