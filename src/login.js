@@ -145,7 +145,7 @@ const Login = () => {
               } px-4 py-2 rounded-tr-md rounded-br-md focus:outline-none`}
               onClick={() => handleTabChange("signup")}
             >
-              Signup sankit
+              Signup
             </button>
           </div>
           {activeTab === "login" && (
