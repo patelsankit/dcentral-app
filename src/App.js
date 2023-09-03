@@ -3,6 +3,9 @@ import Login from "./login";
 import { Routes, Route, Router } from "react-router-dom";
 import Protected from "./protected";
 import PrivateRoute from "./privateroute";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 const App = () => {
   // Example authentication check logic
