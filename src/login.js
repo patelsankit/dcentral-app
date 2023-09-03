@@ -83,11 +83,7 @@ const Login = () => {
               } px-4 py-2 focus:outline-none uppercase w-1/2`}
               onClick={() => handleTabChange("signup")}
             >
-<<<<<<< HEAD
-              Signup 
-=======
               Signup
->>>>>>> developnment
             </button>
           </div>
           <div className="content">
