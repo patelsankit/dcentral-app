@@ -6,7 +6,6 @@ import PrivateRoute from "./privateroute";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-
 const App = () => {
   // Example authentication check logic
   const isAuthenticated = () => {
@@ -18,11 +17,14 @@ const App = () => {
 
   return (
     <>
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/protected" element={<Protected />} />
-      </Routes>
+      <div>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/protected" element={<Protected />} />
+        </Routes>
+        <ToastContainer position="bottom-right" />
+      </div>
     </>
   );
 };

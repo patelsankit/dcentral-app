@@ -1,22 +1,21 @@
-// Logout.js
-
 import React from "react";
 import { useNavigate } from "react-router-dom";
-
+import { toast, ToastContainer } from "react-toastify";
 const Logout = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    // localStorage.clear();
-    // Perform logout logic here
-    // For example, clear any user authentication tokens or session information
-
-    // Redirect the user to the login page after logout
     navigate("/login");
+    toast.error("logout successful", {
+      autoClose: 3000,
+    });
   };
 
-  return <button className="w-full pt-10" onClick={handleLogout}>  <div>
-        <button className="btnss">
+  return (
+    <button className="w-full pt-10">
+      {" "}
+      <div>
+        <button className="btnss" onClick={handleLogout}>
           <span>Logout</span>
           <div className="star-1">
             <svg
@@ -34,9 +33,10 @@ const Logout = () => {
               />
             </svg>
           </div>
-          {/* Add the rest of the star SVG divs */}
         </button>
-      </div></button>;
+      </div>
+    </button>
+  );
 };
 
 export default Logout;
