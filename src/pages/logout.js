@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
-import { showToast } from "./components/toastService";
+import { showToast } from "../components/toastService";
+
 const Logout = () => {
   const navigate = useNavigate();
   const handleLogout = () => {

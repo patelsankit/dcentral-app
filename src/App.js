@@ -1,14 +1,11 @@
 import "./App.css";
-import Login from "./login";
+import Login from "./pages/login";
 import { Routes, Route, Router } from "react-router-dom";
-import PrivateRoute from "./privateroute";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { showToast } from "./components/toastService";
-import Blogs from "./components/Blogs";
-import Contact from "./components/Contact";
-import Home from "./home";
-
+import Blogs from "./pages/Blogs";
+import Contact from "./pages/Contact";
+import Home from "./pages/home";
 const App = () => {
   return (
     <>
