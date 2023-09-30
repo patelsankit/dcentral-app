@@ -4,7 +4,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import imageone from "./assets/images/bg.svg";
 import bglogin from "./assets/images/bg-login.svg";
-
+import axios from "axios"; // Import Axios
 const Login = () => {
   const [activeTab, setActiveTab] = useState("login");
   const [loginUsername, setLoginUsername] = useState("");
@@ -17,49 +17,54 @@ const Login = () => {
   const handleTabChange = (tab) => {
     setActiveTab(tab);
   };
-  const handleLoginSubmit = (e) => {
+  const showToast = (message, type) => {
+    toast[type](message, {
+      autoClose: 3000,
+      onClose: () => setToastVisible(false),
+    });
+    setToastVisible(true);
+  };
+  const handleLoginSubmit = async (e) => {
     e.preventDefault();
 
-    const validUsername = "patelsankit16@gmail.com";
-    const validPassword = "9574540106";
+    try {
+      const response = await axios.get(
+        `https://jsonplaceholder.typicode.com/users?email=${loginUsername}`
+      );
 
-    if (loginUsername === validUsername && loginPassword === validPassword) {
-      toast.success("login successful", {
-        autoClose: 3000,
-      });
-      navigate("/protected");
-    } else {
-      // setLoginUsername("");
-      // setLoginPassword("");
-      toast.error("Invalid username or password", {
+      if (response.data.length > 0) {
+        const user = response.data[0];
+        if (user.email === loginUsername && user.username === loginPassword) {
+          // toast.success("Login successful", {
+          //   autoClose: 3000,
+          // });
+          showToast("Login successful", "success");
+          navigate("/dashboard");
+        } else {
+          // toast.error("Invalid username or password", {
+          //   autoClose: 3000,
+          // });
+          showToast("Invalid username or password", "error");
+        }
+      } else {
+        toast.error("Invalid username or password", {
+          autoClose: 3000,
+        });
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+      toast.error("An error occurred while logging in", {
         autoClose: 3000,
       });
     }
   };
 
-  // const handleSignupSubmit = (e) => {
-  //   e.preventDefault();
-  //   toast.success("signup successful", {
-  //     autoClose: 3000,
-  //   });
-  // };
-
-  const handleSignupSubmit = async (e) => {
+  const handleSignupSubmit = (e) => {
     e.preventDefault();
-    // Simulate signup logic here
-
-    // Disable the button
-    setToastVisible(true);
-
-    // Simulate a delay of 3 seconds
-    setTimeout(() => {
-      // Enable the button after 3 seconds
-      setToastVisible(false);
-    }, 3500);
-
-    toast.success("Signup successful", {
-      autoClose: 3000,
-    });
+    showToast("Signup successful", "success");
+    // toast.success("Signup successful", {
+    //   autoClose: 3000,
+    // });
   };
 
   return (
@@ -187,94 +192,9 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <ToastContainer position="bottom-right" />
+      {/* <ToastContainer position="bottom-right" /> */}
     </div>
   );
 };
 
 export default Login;
-
-// import { useState } from "react";
-// import { useNavigate } from "react-router-dom";
-// import { toast, ToastContainer } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
-// import imageone from "./assets/images/bg.svg";
-// import bglogin from "./assets/images/bg-login.svg";
-
-// const Login = () => {
-//   const [activeTab, setActiveTab] = useState("login");
-//   const [loginUsername, setLoginUsername] = useState("");
-//   const [loginPassword, setLoginPassword] = useState("");
-//   const [signupUsername, setSignupUsername] = useState("");
-//   const [signupPassword, setSignupPassword] = useState("");
-//   const navigate = useNavigate();
-//   const [toastVisible, setToastVisible] = useState(false);
-
-//   const handleTabChange = (tab) => {
-//     setActiveTab(tab);
-//   };
-
-//   const handleLoginSubmit = (e) => {
-//     e.preventDefault();
-
-//     const validUsername = "patelsankit16@gmail.com";
-//     const validPassword = "9574540106";
-
-//     if (loginUsername === validUsername && loginPassword === validPassword) {
-//       toast.success("Login successful", {
-//         autoClose: 3000,
-//       });
-//       navigate("/protected");
-//     } else {
-//       toast.error("Invalid username or password", {
-//         autoClose: 3000,
-//       });
-//     }
-//   };
-
-//   const handleSignupSubmit = async (e) => {
-//     e.preventDefault();
-//     // Simulate signup logic here
-
-//     // Disable the button
-//     setToastVisible(true);
-
-//     // Simulate a delay of 3 seconds
-//     setTimeout(() => {
-//       // Enable the button after 3 seconds
-//       setToastVisible(false);
-//     }, 3000);
-
-//     toast.success("Signup successful", {
-//       autoClose: 3000,
-//     });
-//   };
-
-//   return (
-//     <div className="min-h-screen flex p-5 sm:p-10">
-//       {/* ... (your existing code) */}
-//       <div className="content">
-//         {activeTab === "login" && (
-//           <form onSubmit={handleLoginSubmit}>
-//             {/* ... (your existing code) */}
-//           </form>
-//         )}
-//         {activeTab === "signup" && (
-//           <form onSubmit={handleSignupSubmit}>
-//             {/* ... (your existing code) */}
-//             <button
-//               type="submit"
-//               className="btnlogin border-0 rounded-[33px] hover:border-0 w-full bg-[#121051] text-white py-2"
-//               disabled={toastVisible}
-//             >
-//               Signup
-//             </button>
-//           </form>
-//         )}
-//       </div>
-//       <ToastContainer position="bottom-right" />
-//     </div>
-//   );
-// };
-
-// export default Login;

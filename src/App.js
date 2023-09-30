@@ -1,29 +1,28 @@
 import "./App.css";
 import Login from "./login";
 import { Routes, Route, Router } from "react-router-dom";
-import Protected from "./protected";
 import PrivateRoute from "./privateroute";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { showToast } from "./components/toastService";
+import Blogs from "./components/Blogs";
+import Contact from "./components/Contact";
+import Home from "./home";
 
 const App = () => {
-  // Example authentication check logic
-  const isAuthenticated = () => {
-    // Replace this with your actual authentication check logic
-    // e.g., check if the user has a valid authentication token or session
-    const authToken = localStorage.getItem("authToken");
-    return authToken !== null;
-  };
-
   return (
     <>
       <div>
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/protected" element={<Protected />} />
+          <Route path="/dashboard" element={<Home />} />
+          <Route path="/blog" element={<Blogs />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
-        <ToastContainer position="bottom-right" />
+        <ToastContainer position="top-right" />
+
+        {/* another way */}
       </div>
     </>
   );

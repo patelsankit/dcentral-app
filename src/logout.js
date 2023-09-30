@@ -1,21 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
+import { showToast } from "./components/toastService";
 const Logout = () => {
   const navigate = useNavigate();
-
   const handleLogout = () => {
     navigate("/login");
-    toast.error("logout successful", {
-      autoClose: 3000,
-    });
+    // toast.error("logout successful", {
+    //   autoClose: 3000,
+    // });
+    showToast("Logout successful", "success");
   };
 
   return (
-    <button className="w-full pt-10">
-      {" "}
+    <div className="w-full pt-10">
       <div>
-        <button className="btnss" onClick={handleLogout}>
+        <div
+          className="btnss inline-block cursor-pointer"
+          onClick={handleLogout}
+        >
           <span>Logout</span>
           <div className="star-1">
             <svg
@@ -33,9 +36,9 @@ const Logout = () => {
               />
             </svg>
           </div>
-        </button>
+        </div>
       </div>
-    </button>
+    </div>
   );
 };
 
