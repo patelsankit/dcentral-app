@@ -374,3 +374,16 @@
   transform: translate(70px, -52px);
   letter-spacing: 0px;
 }
+
+/* CSS for responsiveness */
+.responsive-buttons {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically by default */
+}
+
+@media (min-width: 768px) {
+  /* Apply horizontal layout for screens wider than 768px */
+  .responsive-buttons {
+    flex-direction: row;
+  }
+}

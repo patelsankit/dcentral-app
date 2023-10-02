@@ -7,12 +7,16 @@ import {
 } from "@radix-ui/react-accordion";
 import Logout from "./logout";
 import ToggleButton from "../components/ToggleButton";
+import Header from "../components/Header";
+import DataTable from "../components/DataTable";
 
 const Home = () => {
   return (
     <div className="bg-[#212121] min-h-screen text-center">
+      <Header />
       <ToggleButton />
       <h1 className="text-white pt-5">Welcome to the home page sankit!</h1>
+      <DataTable />
       <Logout />
 
       {/* <Accordion type="single" collapsible>

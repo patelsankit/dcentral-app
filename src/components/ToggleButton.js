@@ -9,7 +9,7 @@ const ToggleButton = () => {
   };
 
   return (
-    <label className="flex items-center space-x-2">
+    <label className="flex items-center space-x-2 cursor-pointer">
       <span className="text-red-800 text-30">Toggle:</span>
       <Switch checked={isChecked} onCheckedChange={handleChange} />
       <span

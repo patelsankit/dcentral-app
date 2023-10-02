@@ -14,7 +14,7 @@ const Logout = () => {
   };
 
   return (
-    <div className="w-full pt-10">
+    <div className="w-full pt-20 pb-40">
       <div>
         <div
           className="btnss inline-block cursor-pointer"
