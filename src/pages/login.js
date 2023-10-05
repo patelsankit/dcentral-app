@@ -5,6 +5,8 @@ import "react-toastify/dist/ReactToastify.css";
 import imageone from "../assets/images/bg.svg";
 import bglogin from "../assets/images/bg-login.svg";
 import axios from "axios"; // Import Axios
+import { showToast } from "../components/toastService";
+
 const Login = () => {
   const [activeTab, setActiveTab] = useState("login");
   const [loginUsername, setLoginUsername] = useState("");
@@ -17,13 +19,13 @@ const Login = () => {
   const handleTabChange = (tab) => {
     setActiveTab(tab);
   };
-  const showToast = (message, type) => {
-    toast[type](message, {
-      autoClose: 3000,
-      onClose: () => setToastVisible(false),
-    });
-    setToastVisible(true);
-  };
+  // const showToast = (message, type) => {
+  //   toast[type](message, {
+  //     autoClose: 3000,
+  //     onClose: () => setToastVisible(false),
+  //   });
+  //   setToastVisible(true);
+  // };
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
 
@@ -92,21 +94,19 @@ const Login = () => {
         <div className="bg-white p-8 shadow-md rounded-md w-96 md:w-[450px]">
           <div className="flex justify-between mb-4">
             <button
-              className={`${
-                activeTab === "login"
+              className={`${activeTab === "login"
                   ? "text-blue-500 border-b-4 border-[#7654ff]"
                   : "text-gray-200 border-b border-[#E5E6F0]"
-              } px-4 py-2 focus:outline-none uppercase w-1/2`}
+                } px-4 py-2 focus:outline-none uppercase w-1/2`}
               onClick={() => handleTabChange("login")}
             >
               Login
             </button>
             <button
-              className={`${
-                activeTab === "signup"
+              className={`${activeTab === "signup"
                   ? "text-blue-500 border-b-4 border-[#7654ff]"
                   : "text-gray-200 border-b border-[#E5E6F0]"
-              } px-4 py-2 focus:outline-none uppercase w-1/2`}
+                } px-4 py-2 focus:outline-none uppercase w-1/2`}
               onClick={() => handleTabChange("signup")}
               disabled={toastVisible}
             >

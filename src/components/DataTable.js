@@ -109,7 +109,7 @@ import TablePagination from '@mui/material/TablePagination';
 function DataTable() {
   const [data, setData] = useState([]);
   const [page, setPage] = useState(0);
-  const [rowsPerPage, setRowsPerPage] = useState(15);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
   const [searchText, setSearchText] = useState('');
   const [filteredData, setFilteredData] = useState([]);
 
@@ -150,25 +150,29 @@ function DataTable() {
   );
 
   return (
-    <div className="table-container bg-white m-10 p-5">
-      <TextField
-        label="Search"
-        variant="outlined"
-        size="small"
-        value={searchText}
-        onChange={(e) => setSearchText(e.target.value)}
-        fullWidth
-        margin="normal"
-      />
-      <TablePagination
-        rowsPerPageOptions={[10, 20, 25, 50, 75]}
-        component="div"
-        count={filteredData.length}
-        rowsPerPage={rowsPerPage}
-        page={page}
-        onPageChange={handleChangePage}
-        onRowsPerPageChange={handleChangeRowsPerPage}
-      />
+    <div className="table-container bg-white m-10 p-5 rounded-xl">
+      <div className='flex items-center justify-between flex-wrap'>
+
+        <TextField
+          className='sm:!w-1/3'
+          label="Search"
+          variant="outlined"
+          size="small"
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}
+          fullWidth
+          margin="normal"
+        />
+        <TablePagination
+          rowsPerPageOptions={[5, 10, 20, 25, 50, 75]}
+          component="div"
+          count={filteredData.length}
+          rowsPerPage={rowsPerPage}
+          page={page}
+          onPageChange={handleChangePage}
+          onRowsPerPageChange={handleChangeRowsPerPage}
+        />
+      </div>
       <TableContainer component={Paper}>
         <Table>
           <TableHead>

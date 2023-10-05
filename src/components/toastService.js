@@ -3,6 +3,6 @@ import { toast } from "react-toastify";
 
 export const showToast = (message, type) => {
   toast[type](message, {
-    autoClose: 3000,
+    autoClose: 2000,
   });
 };

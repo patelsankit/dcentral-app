@@ -1,0 +1,16 @@
+/* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 0.5rem; /* Set a width to create a space for the scrollbar, or use 0 if you want to completely hide it */
+  display: none; /* Hide the scrollbar */
+}
+
+/* Track styles (optional) */
+::-webkit-scrollbar-track {
+  background: transparent; /* Set the background color of the scrollbar track */
+}
+
+/* Thumb styles (optional) */
+::-webkit-scrollbar-thumb {
+  background: #888; /* Set the color of the scrollbar thumb */
+  border-radius: 0.25rem; /* Add rounded corners to the scrollbar thumb */
+}

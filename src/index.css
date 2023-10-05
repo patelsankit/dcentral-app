@@ -1,5 +1,7 @@
 @import "./assets/css/custom.css";
 @import "./assets/css/input-custom.css";
+@import "./assets/css/webkit-scroll-bar.css";
+/* @import "./assets/css/checkbox.css"; */
 /* @import '@radix-ui/themes/styles.css'; */
 @tailwind base;
 @tailwind components;

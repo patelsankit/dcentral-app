@@ -4,8 +4,9 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
+// import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
+
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(true);
@@ -16,9 +17,9 @@ export default function Header() {
 
   return (
     <AppBar position="static">
-      <Toolbar className="flex justify-between">
-        <div className="flex items-center flex-col sm:flex-row">
-          <IconButton className="block sm:hidden"
+      <Toolbar className="flex justify-center sm:justify-between flex-col sm:flex-row dark:bg-[#212121]">
+        <div className="flex items-center w-full justify-between sm:justify-start">
+          <IconButton className="block sm:!hidden"
             size="large"
             edge="start"
             color="inherit"
@@ -26,11 +27,16 @@ export default function Header() {
             sx={{ mr: 2 }}
             onClick={toggleMenu}
           >
-            <MenuIcon />
+            {/* <MenuIcon /> */}
+            =
           </IconButton>
-          <Typography className="hidden sm:block" variant="h6" component="div">
-            GeeksforGeeks Header
-          </Typography>
+          <Link
+            className="text-white"
+            to="/dashboard"
+            style={{ textDecoration: "none" }}
+          >
+            <Button className="!text-white !font-600">Home</Button>
+          </Link>
         </div>
 
         <div

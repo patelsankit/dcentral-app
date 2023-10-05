@@ -15,6 +15,8 @@ const rem = (px) => {
 };
 
 module.exports = {
+  // darkMode: ['class', '[data-mode="dark"]'],
+  darkMode: 'class',
   content: ["./src/**/*.{html,js}"],
   theme: {
     fontFamily: {

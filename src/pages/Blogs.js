@@ -1,4 +1,5 @@
 import React from "react";
+import Header from "../components/Header";
 
 const sampleBlogData = [
   {
@@ -25,14 +26,17 @@ const BlogArticle = ({ title, content }) => (
 
 const Blogs = () => {
   return (
-    <div className="container mx-auto py-8">
-      <h1 className="text-3xl font-semibold mb-4">Blog Articles</h1>
-      <div>
-        {sampleBlogData.map((blog) => (
-          <BlogArticle key={blog.id} title={blog.title} content={blog.content} />
-        ))}
+    <>
+      <Header />
+      <div className="container mx-auto py-8">
+        <h1 className="text-3xl font-semibold mb-4">Blog Articles</h1>
+        <div>
+          {sampleBlogData.map((blog) => (
+            <BlogArticle key={blog.id} title={blog.title} content={blog.content} />
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
