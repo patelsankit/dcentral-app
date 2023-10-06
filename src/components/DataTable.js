@@ -150,7 +150,7 @@ function DataTable() {
   );
 
   return (
-    <div className="table-container bg-white m-10 p-5 rounded-xl">
+    <div className="table-container bg-white m-2 mb-10 sm:m-10 p-5 rounded-xl">
       <div className='flex items-center justify-between flex-wrap'>
 
         <TextField

@@ -4,9 +4,8 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
-// import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
-
+import ToggleButton from "./ToggleButton";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(true);
@@ -17,7 +16,7 @@ export default function Header() {
 
   return (
     <AppBar position="static">
-      <Toolbar className="flex justify-center sm:justify-between flex-col sm:flex-row dark:bg-[#212121]">
+      <Toolbar className="flex justify-center items-center gap-2 sm:justify-between flex-col sm:flex-row dark:bg-[#212121] !px-3">
         <div className="flex items-center w-full justify-between sm:justify-start">
           <IconButton className="block sm:!hidden"
             size="large"
@@ -27,16 +26,21 @@ export default function Header() {
             sx={{ mr: 2 }}
             onClick={toggleMenu}
           >
-            {/* <MenuIcon /> */}
             =
           </IconButton>
-          <Link
-            className="text-white"
-            to="/dashboard"
-            style={{ textDecoration: "none" }}
-          >
-            <Button className="!text-white !font-600">Home</Button>
-          </Link>
+          <div className="flex items-center">
+            <Link
+              className="text-white"
+              to="/dashboard"
+              style={{ textDecoration: "none" }}
+            >
+              <Button className="!text-white !font-600">Home</Button>
+            </Link>
+            <div className="sm:hidden">
+              <ToggleButton />
+            </div>
+
+          </div>
         </div>
 
         <div
@@ -64,6 +68,9 @@ export default function Header() {
           >
             <Button className="!text-white">Logout</Button>
           </Link>
+        </div>
+        <div className="hidden sm:block">
+          <ToggleButton />
         </div>
       </Toolbar>
     </AppBar>

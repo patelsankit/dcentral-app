@@ -25,7 +25,7 @@ const Home = () => {
   return (
     <div className="bg-white dark:bg-[#212121] min-h-screen text-center">
       <Header />
-      <ToggleButton />
+
       <div>
         <Modal isOpen={isModalOpen} onClose={closeModal}>
           <h2>Modal Content</h2>

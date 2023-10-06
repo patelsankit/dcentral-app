@@ -41,7 +41,7 @@ const ToggleButton = () => {
   return (
     <>
       <div className="flex justify-end items-center gap-2">
-        <span className="text-black dark:text-white">Dark/light mode</span>
+        <span className="text-white whitespace-nowrap">Dark/light mode</span>
         <label className="plane-switch">
           <input type="checkbox" checked={isChecked} onChange={handleChange} />
           <div className="ms-auto m-4">
