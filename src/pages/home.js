@@ -10,6 +10,7 @@ import ToggleButton from "../components/ToggleButton";
 import Header from "../components/Header";
 import DataTable from "../components/DataTable";
 import Modal from '../components/Modal';
+import News from "./News";
 
 
 const Home = () => {
@@ -25,7 +26,6 @@ const Home = () => {
   return (
     <div className="bg-white dark:bg-[#212121] min-h-screen text-center">
       <Header />
-
       <div>
         <Modal isOpen={isModalOpen} onClose={closeModal}>
           <h2>Modal Content</h2>

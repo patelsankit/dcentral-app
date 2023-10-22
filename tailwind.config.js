@@ -91,6 +91,7 @@ module.exports = {
         main: "0px 0px 0px 0px rgba(3, 34, 51, 0.07), 0px 5px 10px 0px rgba(2, 27, 41, 0.05), 0px 10px 20px 0px rgba(6, 35, 52, 0.02)",
         main_hover:
           "0px 0px 0px 0px rgba(3, 34, 51, 0.07), 0px 31px 31px 0px rgba(2, 27, 41, 0.03), 0px 70px 42px 0px rgba(6, 35, 52, 0.03)",
+        shadowcard: "0 40px 80px #14223612",
       },
     },
   },

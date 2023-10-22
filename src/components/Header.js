@@ -8,14 +8,14 @@ import { Link } from "react-router-dom";
 import ToggleButton from "./ToggleButton";
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(true);
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="sticky">
       <Toolbar className="flex justify-center items-center gap-2 sm:justify-between flex-col sm:flex-row dark:bg-[#212121] !px-3">
         <div className="flex items-center w-full justify-between sm:justify-start">
           <IconButton className="block sm:!hidden"
@@ -44,9 +44,18 @@ export default function Header() {
         </div>
 
         <div
-          className={`${isMenuOpen ? "block" : "hidden"
-            } sm:flex sm:space-x-4`}
+          className={`sm:flex sm:space-x-4 ${isMenuOpen ? "" : "hidden"}`}
+
+        // className={`${isMenuOpen ? "block" : "hidden"
+        //   } sm:flex sm:space-x-4`}
         >
+          <Link
+            className="text-white"
+            to="/news"
+            style={{ textDecoration: "none" }}
+          >
+            <Button className="!text-white">News</Button>
+          </Link>
           <Link
             className="text-white"
             to="/blog"

@@ -7,6 +7,7 @@ import Blogs from "./pages/Blogs";
 import Contact from "./pages/Contact";
 import Home from "./pages/home";
 import Header from "./components/Header";
+import News from "./pages/News";
 const App = () => {
   return (
     <>
@@ -17,11 +18,10 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Home />} />
           <Route path="/blog" element={<Blogs />} />
+          <Route path="/news" element={<News />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <ToastContainer position="top-right" />
-
-        {/* another way */}
       </div>
     </>
   );
